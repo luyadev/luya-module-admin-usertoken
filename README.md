@@ -26,6 +26,14 @@ add to the config
 ]
 ```
 
+bootstrap the app:
+
+```php
+'bootstrap' => [
+    'luya\admin\usertoken\Bootstrap',
+]
+```
+
 Run the import command afterwards:
 
 ```sh
