@@ -13,10 +13,24 @@
 Install the extension through composer:
 
 ```sh
-composer require VENDOR/NAME
+composer require luyadev/luya-module-admin-usertoken
+```
+
+add to the config
+
+```php
+'modules' => [
+    'usertoken' => [
+      'class' => 'luya\admin\usertoken\Module',
+    ]
+]
 ```
 
 Run the import command afterwards:
+
+```sh
+./luya migrate
+```
 
 ```sh
 ./luya import

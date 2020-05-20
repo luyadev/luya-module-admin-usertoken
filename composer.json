@@ -4,23 +4,26 @@
 	"type" : "luya-extension",
 	"keywords" : ["luya"],
 	"license": "MIT",
-	"authors" : [
-		{
-			"name": "",
-			"email": ""
-		}
-	],
+	"require": {
+		"luyadev/luya-module-admin" : "^3.2"
+	},
 	"require-dev" : {
 	    "luyadev/luya-testsuite" : "^1.0"
 	},
 	"autoload" : {
 		"psr-4" : {
-			"luyadev\\admin\\usertoken\\" : "src/"
+			"luya\\admin\\usertoken\\" : "src/"
 		}
 	},
 	"autoload-dev" : {
        "psr-4" : {
-           "luyadev\\admin\\usertoken\\tests\\" : "tests/"
+           "luya\\admin\\usertoken\\tests\\" : "tests/"
        }
-    }
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	]
 }
