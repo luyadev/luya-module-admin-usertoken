@@ -1,5 +1,5 @@
 {
-	"name" : "VENDOR/NAME",
+	"name" : "luyadev/luya-module-admin-usertoken",
 	"description" : "",
 	"type" : "luya-extension",
 	"keywords" : ["luya"],
@@ -11,16 +11,16 @@
 		}
 	],
 	"require-dev" : {
-	    "luyadev/luya-testsuite" : "~1.0.0"
+	    "luyadev/luya-testsuite" : "^1.0"
 	},
 	"autoload" : {
 		"psr-4" : {
-			"VENDOR\\NAME\\" : "src/"
+			"luyadev\\admin\\usertoken\\" : "src/"
 		}
 	},
 	"autoload-dev" : {
        "psr-4" : {
-           "VENDOR\\NAME\\tests\\" : "tests/"
+           "luyadev\\admin\\usertoken\\tests\\" : "tests/"
        }
     }
 }
