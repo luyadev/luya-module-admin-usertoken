@@ -11,8 +11,13 @@ use yii\base\InvalidArgumentException;
 
 class LoginController extends RestController
 {
-    public $authOptional = ['index'];
+    public $authOptional = ['index';
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function actionIndex()
     {
         $app = App::find()->where(['token' => trim(Yii::$app->request->getBodyParam('app'))])->one();

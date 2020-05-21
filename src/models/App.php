@@ -94,9 +94,23 @@ class App extends NgRestModel
             'name' => 'text',
             'token' => 'text',
             'is_multiple_auth_allowed' => 'toggleStatus',
-            'expires_in' => 'number',
+            'expires_in' => ['selectArray', 'data' => [
+                0 => 'Never',
+                3600 => '1 Hour',
+                86400 => '24 Hours',
+                2592000 => '30 days',
+                7776000 => '90 days',
+            ]],
             'created_at' => 'number',
             'updated_at' => 'number',
+        ];
+    }
+
+    public function attributeHints()
+    {
+        return [
+            'is_multiple_auth_allowed' => 'If enabled, each login will create a new token until he expires. If disabled each login will update the existing token with a new key.',
+            'expires_in' => 'Time until a access token gets invalid and a new one is generated. if 0, tokens will never expire.',
         ];
     }
 
@@ -106,8 +120,8 @@ class App extends NgRestModel
     public function ngRestScopes()
     {
         return [
-            ['list', ['name', 'token', 'is_multiple_auth_allowed', 'expires_in', 'created_at', 'updated_at']],
-            [['create', 'update'], ['name', 'is_multiple_auth_allowed', 'expires_in', 'created_at', 'updated_at']],
+            ['list', ['name', 'token', 'is_multiple_auth_allowed', 'expires_in']],
+            [['create', 'update'], ['name', 'is_multiple_auth_allowed', 'expires_in']],
             ['delete', false],
         ];
     }

@@ -10,6 +10,14 @@ class Module extends BaseModule
         'api-usertoken-app' => 'luya\admin\usertoken\apis\AppController',
         'api-usertoken-login' => 'luya\admin\usertoken\apis\LoginController',
     ];
+
+    public $apiRules = [
+        'api-usertoken-login' => [
+            'patterns' => [
+                'GET' => ' index',
+            ]
+        ],
+    ];
     
     public function getMenu()
     {

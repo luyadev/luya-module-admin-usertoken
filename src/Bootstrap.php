@@ -2,7 +2,6 @@
 
 namespace luya\admin\usertoken;
 
-use luya\admin\components\AdminUser;
 use luya\admin\events\UserAccessTokenLoginEvent;
 use luya\admin\models\User;
 use luya\admin\usertoken\models\Token;
@@ -12,7 +11,7 @@ class Bootstrap implements BootstrapInterface
 {
     public function bootstrap($app)
     {
-        $app->adminuser->on('eventUserAccessTokenLogin', [
+        $app->on('eventUserAccessTokenLogin', [
             $this, 'loginByToken'
         ]); // replace by constant
     }
