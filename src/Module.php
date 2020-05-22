@@ -14,7 +14,7 @@ class Module extends BaseModule
     public $apiRules = [
         'api-usertoken-login' => [
             'patterns' => [
-                'GET' => ' index',
+                'POST' => 'index',
             ]
         ],
     ];

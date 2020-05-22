@@ -21,7 +21,7 @@ class Bootstrap implements BootstrapInterface
         $token = Token::find()->where(['token' => $event->token])->one();
 
         if ($token) {
-            $event->setUser(User::findOne($token->user_id));
+            $event->login(User::findOne($token->user_id));
         }
     }
 }
