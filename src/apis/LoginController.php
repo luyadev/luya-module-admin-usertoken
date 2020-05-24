@@ -25,6 +25,9 @@ class LoginController extends RestController
      * Login an user by email and password with a valid application token. The data must be submited by POST and requires `app`, `email` and `password` data.
      * 
      * @return Token If successfull the token object is returned.
+     * @uses string email
+     * @uses string password
+     * @uses string app
      */
     public function actionIndex()
     {
