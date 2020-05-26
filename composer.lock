@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c97be67207d6b7b9bc8cc784fafa304",
+    "content-hash": "a9115e384f641e96ca6f8df758fbcf16",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -638,16 +638,16 @@
         },
         {
             "name": "luyadev/luya-module-admin",
-            "version": "dev-master",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/luyadev/luya-module-admin.git",
-                "reference": "dac300aa7a266956d29ff1adcfb30b7417b8e7af"
+                "reference": "db427e26aff9ae920f53cf563a7beea9b9efd43d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luyadev/luya-module-admin/zipball/dac300aa7a266956d29ff1adcfb30b7417b8e7af",
-                "reference": "dac300aa7a266956d29ff1adcfb30b7417b8e7af",
+                "url": "https://api.github.com/repos/luyadev/luya-module-admin/zipball/db427e26aff9ae920f53cf563a7beea9b9efd43d",
+                "reference": "db427e26aff9ae920f53cf563a7beea9b9efd43d",
                 "shasum": ""
             },
             "require": {
@@ -721,7 +721,7 @@
                 "yii",
                 "yii2"
             ],
-            "time": "2020-05-26T09:03:48+00:00"
+            "time": "2020-05-26T10:06:20+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -3033,9 +3033,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "luyadev/luya-module-admin": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -2,10 +2,10 @@
 	"name" : "luyadev/luya-module-admin-usertoken",
 	"description" : "",
 	"type" : "luya-extension",
-	"keywords" : ["luya"],
+	"keywords" : ["luya", "admin", "accesstoken", "tokens", "login"],
 	"license": "MIT",
 	"require": {
-		"luyadev/luya-module-admin" : "dev-master"
+		"luyadev/luya-module-admin" : "^3.3"
 	},
 	"require-dev" : {
 	    "luyadev/luya-testsuite" : "^1.0"
