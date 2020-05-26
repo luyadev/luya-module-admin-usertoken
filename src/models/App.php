@@ -7,9 +7,7 @@ use luya\admin\ngrest\base\NgRestModel;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * App.
- * 
- * File has been created with `crud/create` command. 
+ * App
  *
  * @property integer $id
  * @property string $name

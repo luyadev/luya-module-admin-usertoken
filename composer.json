@@ -5,7 +5,7 @@
 	"keywords" : ["luya"],
 	"license": "MIT",
 	"require": {
-		"luyadev/luya-module-admin" : "^3.2"
+		"luyadev/luya-module-admin" : "dev-master"
 	},
 	"require-dev" : {
 	    "luyadev/luya-testsuite" : "^1.0"

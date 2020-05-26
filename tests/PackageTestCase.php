@@ -1,5 +1,6 @@
 <?php
-namespace VENDOR\NAME\tests;
+
+namespace luya\admin\usertoken\tests;
 
 use luya\testsuite\cases\WebApplicationTestCase;
 

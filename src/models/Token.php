@@ -6,7 +6,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the model class for table "admin_usertoken_token".
+ * Token
  *
  * @property int $id
  * @property int $user_id
