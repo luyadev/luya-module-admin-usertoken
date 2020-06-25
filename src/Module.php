@@ -9,6 +9,8 @@ class Module extends BaseModule
     public $apis = [
         'api-usertoken-app' => 'luya\admin\usertoken\apis\AppController',
         'api-usertoken-login' => 'luya\admin\usertoken\apis\LoginController',
+        'api-usertoken-token' => 'luya\admin\usertoken\apis\TokenController',
+
     ];
 
     public $apiRules = [
@@ -24,7 +26,8 @@ class Module extends BaseModule
         return (new \luya\admin\components\AdminMenuBuilder($this))
             ->node('User Tokens', 'lock')
                 ->group('Group')
-                    ->itemApi('Apps', 'usertoken/app/index', 'label', 'api-usertoken-app');
+                    ->itemApi('Apps', 'usertoken/app/index', 'apps', 'api-usertoken-app')
+                    ->itemApi('Login Tokens', 'usertoken/token/index', 'lock', 'api-usertoken-token');
     }
 
 }

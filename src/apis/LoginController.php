@@ -47,6 +47,7 @@ class LoginController extends RestController
             if (!$app->is_multiple_auth_allowed) {
                 if (($token = Token::find()->where(['user_id' => $form->user->id, 'app_id' => $app->id]))) {
                     $token->token = Yii::$app->security->generateRandomString(64);
+                    $token->updateCounters(['login_count' => 1]);
                     if ($token->update()) {
                         return $token;
                     }
@@ -63,6 +64,7 @@ class LoginController extends RestController
             $model->token = Yii::$app->security->generateRandomString(64);
             $model->app_id = $app->id;
             $model->user_id = $form->user->id;
+            $model->login_count = 1;
             if ($model->save()) {
                 return $model;
             }

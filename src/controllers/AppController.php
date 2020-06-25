@@ -16,6 +16,6 @@ class AppController extends \luya\admin\ngrest\base\Controller
 
     public function getDescription()
     {
-        return 'Register an App which will be use as an Identifier for the given Application. Afterwards use the APIs to login a given user in a certain App.';
+        return 'Register an App which will generate an Identifier and can be used to make User Login calls.';
     }
 }
