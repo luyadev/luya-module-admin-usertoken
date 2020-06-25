@@ -22,9 +22,9 @@ class Module extends BaseModule
     public function getMenu()
     {
         return (new \luya\admin\components\AdminMenuBuilder($this))
-            ->node('App', 'extension')
+            ->node('User Tokens', 'lock')
                 ->group('Group')
-                    ->itemApi('App', 'usertoken/app/index', 'label', 'api-usertoken-app');
+                    ->itemApi('Apps', 'usertoken/app/index', 'label', 'api-usertoken-app');
     }
 
 }

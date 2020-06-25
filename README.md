@@ -5,6 +5,7 @@
 # LUYA Admin User Token Module
 
 [![LUYA](https://img.shields.io/badge/Powered%20by-LUYA-brightgreen.svg)](https://luya.io)
+![Tests](https://github.com/luyadev/luya-module-admin-usertoken/workflows/Tests/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/48bcbaece4a451825e24/maintainability)](https://codeclimate.com/github/luyadev/luya-module-admin-usertoken/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/48bcbaece4a451825e24/test_coverage)](https://codeclimate.com/github/luyadev/luya-module-admin-usertoken/test_coverage)
 
@@ -48,4 +49,5 @@ Run the import command afterwards:
 
 ## Usage
 
-*Usage description*
+1. Create an App in the Admin UI. The App identifier is used for login.
+2. Use the APIs to make a Login Request for a given User (POST request to `/admin/api-usertoken-login` with fields `email`, `password` and `app`).
