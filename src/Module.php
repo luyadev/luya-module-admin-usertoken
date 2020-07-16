@@ -17,6 +17,7 @@ class Module extends BaseModule
         'api-usertoken-login' => [
             'patterns' => [
                 'POST' => 'index',
+                'OPTIONS' => 'options',
             ]
         ],
     ];

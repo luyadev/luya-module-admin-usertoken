@@ -4,6 +4,7 @@ namespace luya\admin\usertoken\apis;
 
 use luya\admin\base\RestController;
 use luya\admin\models\LoginForm;
+use luya\admin\ngrest\base\actions\OptionsAction;
 use luya\admin\usertoken\models\App;
 use luya\admin\usertoken\models\Token;
 use Yii;
@@ -17,7 +18,14 @@ use yii\base\InvalidArgumentException;
  */
 class LoginController extends RestController
 {
-    public $authOptional = ['index'];
+    public $authOptional = ['index', 'options'];
+
+    public function actions()
+    {
+        return [
+            'options' => OptionsAction::class,
+        ];
+    }
 
     /**
      * User Login
