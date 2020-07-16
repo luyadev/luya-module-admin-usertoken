@@ -53,7 +53,7 @@ class LoginController extends RestController
 
             // Check for an existing token and udpate the token with a new value.
             if (!$app->is_multiple_auth_allowed) {
-                if (($token = Token::find()->where(['user_id' => $form->user->id, 'app_id' => $app->id]))) {
+                if ($token = Token::find()->where(['user_id' => $form->user->id, 'app_id' => $app->id])->one()) {
                     $token->token = Yii::$app->security->generateRandomString(64);
                     $token->updateCounters(['login_count' => 1]);
                     if ($token->update()) {
