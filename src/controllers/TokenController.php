@@ -5,7 +5,8 @@ namespace luya\admin\usertoken\controllers;
 /**
  * Token Controller.
  * 
- * File has been created with `crud/create` command. 
+ * @since 1.0.0
+ * @author Basil Suter <git@nadar.io>
  */
 class TokenController extends \luya\admin\ngrest\base\Controller
 {
@@ -14,6 +15,9 @@ class TokenController extends \luya\admin\ngrest\base\Controller
      */
     public $modelClass = 'luya\admin\usertoken\models\Token';
 
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription()
     {
         return 'Display all users which have requested a login token for the given App.';

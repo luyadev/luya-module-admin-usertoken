@@ -16,6 +16,9 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $expires_in
  * @property integer $created_at
  * @property integer $updated_at
+ * 
+ * @since 1.0.0
+ * @author Basil Suter <git@nadar.io>
  */
 class App extends NgRestModel
 {

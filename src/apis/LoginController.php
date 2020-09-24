@@ -20,6 +20,9 @@ class LoginController extends RestController
 {
     public $authOptional = ['index', 'options'];
 
+    /**
+     * {@inheritDoc}
+     */
     public function actions()
     {
         return [
@@ -42,7 +45,7 @@ class LoginController extends RestController
         $app = App::find()->where(['token' => trim(Yii::$app->request->getBodyParam('app'))])->one();
 
         if (!$app) {
-            throw new InvalidArgumentException("Unable to find the given app.");
+            throw new InvalidArgumentException("Unable to find the given app \"{$app}\" to authorize the given user.");
         }
 
         $form = new LoginForm();
@@ -65,7 +68,14 @@ class LoginController extends RestController
             // remove expired tokens
             if ($app->expires_in) {
                 // remove tokens, which have a create date higher the expires_in
-                // @TODO
+                $deleted = Token::deleteAll([
+                    'and',
+                    ['=', 'user_id', $form->user->id],
+                    ['=', 'app_id', $app->id],
+                    ['<=', 'created_at', time() - $app->expires_in]
+                ]);
+
+                Yii::debug("Deleted {$deleted} expired tokens for the given User", __METHOD__);
             }
 
             $model = new Token();

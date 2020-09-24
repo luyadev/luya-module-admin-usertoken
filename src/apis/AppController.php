@@ -5,7 +5,8 @@ namespace luya\admin\usertoken\apis;
 /**
  * App Controller.
  * 
- * File has been created with `crud/create` command. 
+ * @since 1.0.0
+ * @author Basil Suter <git@nadar.io>
  */
 class AppController extends \luya\admin\ngrest\base\Api
 {

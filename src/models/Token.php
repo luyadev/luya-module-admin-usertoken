@@ -10,8 +10,6 @@ use yii\behaviors\TimestampBehavior;
 
 /**
  * Token.
- * 
- * File has been created with `crud/create` command. 
  *
  * @property integer $id
  * @property integer $user_id
@@ -20,6 +18,9 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $login_count
  * @property integer $created_at
  * @property integer $updated_at
+ * 
+ * @since 1.0.0
+ * @author Basil Suter <git@nadar.io>
  */
 class Token extends NgRestModel
 {
@@ -31,6 +32,9 @@ class Token extends NgRestModel
         return '{{%admin_usertoken_token}}';
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function behaviors()
     {
         return [
@@ -101,11 +105,21 @@ class Token extends NgRestModel
         ];
     }
 
+    /**
+     * App Relation
+     *
+     * @return App
+     */
     public function getApp()
     {
         return $this->hasOne(App::class, ['id' => 'app_id']);
     }
 
+    /**
+     * User Relation
+     *
+     * @return User
+     */
     public function getUser()
     {
         return $this->hasOne(User::class, ['id' => 'user_id']);

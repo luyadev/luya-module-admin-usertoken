@@ -5,7 +5,8 @@ namespace luya\admin\usertoken\apis;
 /**
  * Token Controller.
  * 
- * File has been created with `crud/create` command. 
+ * @since 1.0.0
+ * @author Basil Suter <git@nadar.io>
  */
 class TokenController extends \luya\admin\ngrest\base\Api
 {

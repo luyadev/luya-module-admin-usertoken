@@ -4,8 +4,17 @@ namespace luya\admin\usertoken;
 
 use luya\admin\base\Module as BaseModule;
 
+/**
+ * User Token Module
+ * 
+ * @since 1.0.0
+ * @author Basil Suter <git@nadar.io>
+ */
 class Module extends BaseModule
 {
+    /**
+     * {@inheritDoc}
+     */
     public $apis = [
         'api-usertoken-app' => 'luya\admin\usertoken\apis\AppController',
         'api-usertoken-login' => 'luya\admin\usertoken\apis\LoginController',
@@ -13,6 +22,9 @@ class Module extends BaseModule
 
     ];
 
+    /**
+     * {@inheritDoc}
+     */
     public $apiRules = [
         'api-usertoken-login' => [
             'patterns' => [
@@ -22,6 +34,9 @@ class Module extends BaseModule
         ],
     ];
     
+    /**
+     * {@inheritDoc}
+     */
     public function getMenu()
     {
         return (new \luya\admin\components\AdminMenuBuilder($this))

@@ -1,8 +1,8 @@
 {
 	"name" : "luyadev/luya-module-admin-usertoken",
-	"description" : "",
+	"description" : "Extend the LUYA Admin by providing app's based access token accessible through an API.",
 	"type" : "luya-extension",
-	"keywords" : ["luya", "admin", "accesstoken", "tokens", "login"],
+	"keywords" : ["luya", "admin", "accesstoken", "tokens", "login", "api", "authentication"],
 	"license": "MIT",
 	"require": {
 		"luyadev/luya-module-admin" : "^3.3"
