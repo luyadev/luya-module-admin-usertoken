@@ -11,6 +11,8 @@
 
 Extend the LUYA Admin by providing app's based access token accessible through an API.
 
+![LUYA Admin Interface](https://raw.githubusercontent.com/luyadev/luya-module-admin-usertoken/master/usertoken-screenshot.png)
+
 ## Installation
 
 Install the extension through composer:
