@@ -83,6 +83,8 @@ class LoginControllerTest extends UserTokenTestCase
 
         $this->controller->actionIndex();
 
+        $this->assertNotEmpty($this->controller->actions());
+
         // validation error because of missing email and password
         $this->assertSame(422, $this->app->response->statusCode);
     }
