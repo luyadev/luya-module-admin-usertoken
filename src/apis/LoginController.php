@@ -89,6 +89,5 @@ class LoginController extends RestController
         }
 
         return $this->sendModelError($form);
-        
     }
 }
