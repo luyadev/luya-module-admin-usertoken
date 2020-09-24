@@ -125,4 +125,34 @@ class LoginControllerTest extends UserTokenTestCase
         $this->assertSame(2, $r->login_count);
         $this->assertSame(1, $r->id);
     }
+
+    public function testDeleteOldTokens()
+    {
+        $this->appModel->expires_in = 2;
+        $this->appModel->update();
+
+        $this->app->request->setBodyParams([
+            'app' => $this->appModel->token,
+            'email' => 'john@luya.io',
+            'password' => $this->userPw,
+        ]);
+
+        // multi auth allowed generates new tokens
+        $r = $this->controller->actionIndex();   
+        $this->assertSame(1, $r->login_count);
+        $this->assertSame(1, $r->id);
+
+        $r = $this->controller->actionIndex();   
+        $this->assertSame(1, $r->login_count);
+        $this->assertSame(2, $r->id);
+
+        $this->assertSame("2", Token::find()->count());
+        sleep(3);
+
+        $r = $this->controller->actionIndex();   
+        $this->assertSame(1, $r->login_count);
+        $this->assertSame(3, $r->id);
+
+        $this->assertSame("1", Token::find()->count());
+    }
 }
