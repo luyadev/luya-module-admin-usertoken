@@ -19,6 +19,9 @@ class UserTokenTestCase extends WebApplicationTestCase
             'modules' => [
                 'admin' => [
                     'class' => Module::class,
+                ],
+                'usertoken' => [
+                    'class' => 'luya\admin\usertoken\Module',
                 ]
             ],
             'components' => [

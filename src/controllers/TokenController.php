@@ -20,6 +20,6 @@ class TokenController extends \luya\admin\ngrest\base\Controller
      */
     public function getDescription()
     {
-        return 'Display all users which have requested a login token for the given App.';
+        return 'List all users that have requested a login token for the given app.';
     }
 }
