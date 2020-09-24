@@ -32,6 +32,13 @@ class LoginControllerTest extends UserTokenTestCase
      */
     public $appModel;
 
+    public $userPw = 'FooBar2020!Test!123@';
+
+    /**
+     * @var User
+     */
+    public $userModel;
+
     public function afterSetup()
     {
         parent::afterSetup();
@@ -45,6 +52,21 @@ class LoginControllerTest extends UserTokenTestCase
         $this->appModel->name = 'test';
         $this->appModel->is_multiple_auth_allowed = 1;
         $this->appModel->save();
+
+        $this->createAdminUserFixture([
+            1 => [
+                'id' => 1,
+                'email' => 'john@luya.io',
+                'password' => $this->userPw,
+                'firstname' => 'Basil',
+                'is_deleted' => 0,
+                'is_api_user' => 0,
+            ]
+        ]);
+
+        $this->userModel = User::findOne(1);
+        $this->userModel->encodePassword();
+        $this->userModel->update(true, ['password', 'password_salt']);
 
         $this->controller = new LoginController('login', $this->app->getModule('admin'));
     }
@@ -67,29 +89,11 @@ class LoginControllerTest extends UserTokenTestCase
 
     public function testSuccessfullUserAuth()
     {
-        $pw = 'FooBar2020!Test!123@';
-
-        $userFixture = $this->createAdminUserFixture([
-            1 => [
-                'id' => 1,
-                'email' => 'john@luya.io',
-                'password' => $pw,
-                'firstname' => 'Basil',
-                'is_deleted' => 0,
-                'is_api_user' => 0,
-            ]
-        ]);
-
-        $model = User::findOne(1);
-        $model->encodePassword();
-        $model->update(true, ['password', 'password_salt']);
-
         $this->app->request->setBodyParams([
             'app' => $this->appModel->token,
             'email' => 'john@luya.io',
-            'password' => $pw,
+            'password' => $this->userPw,
         ]);
-
 
         // multi auth allowed generates new tokens
         $r = $this->controller->actionIndex();   
@@ -99,5 +103,26 @@ class LoginControllerTest extends UserTokenTestCase
         $r = $this->controller->actionIndex();   
         $this->assertSame(1, $r->login_count);
         $this->assertSame(2, $r->id);
+    }
+
+    public function testSuccessfullNotMultipleAuth()
+    {
+        $this->appModel->is_multiple_auth_allowed = 0;
+        $this->appModel->update();
+
+        $this->app->request->setBodyParams([
+            'app' => $this->appModel->token,
+            'email' => 'john@luya.io',
+            'password' => $this->userPw,
+        ]);
+
+        // multi auth allowed generates new tokens
+        $r = $this->controller->actionIndex();   
+        $this->assertSame(1, $r->login_count);
+        $this->assertSame(1, $r->id);
+
+        $r = $this->controller->actionIndex();   
+        $this->assertSame(2, $r->login_count);
+        $this->assertSame(1, $r->id);
     }
 }
