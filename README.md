@@ -9,7 +9,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/48bcbaece4a451825e24/maintainability)](https://codeclimate.com/github/luyadev/luya-module-admin-usertoken/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/48bcbaece4a451825e24/test_coverage)](https://codeclimate.com/github/luyadev/luya-module-admin-usertoken/test_coverage)
 
-Extend the LUYA Admin by providing app's based access token accessible through an API.
+Extend the LUYA Admin by providing app's which then LUYA Admin users can authenticated through the API.
 
 ![LUYA Admin Interface](https://raw.githubusercontent.com/luyadev/luya-module-admin-usertoken/master/usertoken-screenshot.png)
 
