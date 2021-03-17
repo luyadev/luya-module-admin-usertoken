@@ -49,6 +49,8 @@ class LoginController extends RestController
         }
 
         $form = new LoginForm();
+        $form->lockoutTime = $this->module->loginAttemptLockoutTime;
+        $form->allowedAttempts = $this->module->loginAttempts;
         $form->email = Yii::$app->request->getBodyParam('email');
         $form->password = Yii::$app->request->getBodyParam('password');
         

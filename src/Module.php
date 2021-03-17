@@ -12,6 +12,19 @@ use luya\admin\base\Module as BaseModule;
  */
 class Module extends BaseModule
 {
+
+    /**
+     * @var integer The number of login attempts a user can do trough login api.
+     * @since 1.1.0
+     */
+    public $loginAttempts = 10;
+
+    /**
+     * @var integer The number of seconds the user will be locked out after {{$loginAttemps}} has exceeded.
+     * @since 1.1.0
+     */
+    public $loginAttemptLockoutTime = 1800; 
+
     /**
      * {@inheritDoc}
      */
@@ -19,7 +32,6 @@ class Module extends BaseModule
         'api-usertoken-app' => 'luya\admin\usertoken\apis\AppController',
         'api-usertoken-login' => 'luya\admin\usertoken\apis\LoginController',
         'api-usertoken-token' => 'luya\admin\usertoken\apis\TokenController',
-
     ];
 
     /**
