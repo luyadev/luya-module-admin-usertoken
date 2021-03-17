@@ -20,13 +20,14 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      ## Install(?) php
+      ## Install php
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           extensions: curl, dom, imagick, intl, mbstring, mcrypt, memcached, mysql, pdo, pdo_mysql, pdo_pgsql, pdo_sqlite, pgsql, sqlite
           ini-values: date.timezone='UTC'
+          coverage: xdebug
 
       ## install composer
       - name: Install dependencies
