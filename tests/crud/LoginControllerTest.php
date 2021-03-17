@@ -68,7 +68,7 @@ class LoginControllerTest extends UserTokenTestCase
         $this->userModel->encodePassword();
         $this->userModel->update(true, ['password', 'password_salt']);
 
-        $this->controller = new LoginController('login', $this->app->getModule('admin'));
+        $this->controller = new LoginController('login', $this->app->getModule('usertoken'));
     }
 
     public function testUnknownApp()
