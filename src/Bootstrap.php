@@ -7,6 +7,7 @@ use luya\admin\models\User;
 use luya\admin\Module;
 use luya\admin\usertoken\models\Token;
 use yii\base\BootstrapInterface;
+use \luya\admin\usertoken\Module as TokenModule;
 
 /**
  * Bootstrap login by token.
@@ -38,7 +39,7 @@ class Bootstrap implements BootstrapInterface
             if ($user) {
                 $event->login($user);
 
-                $forceUserLanguage = Module::getInstance()->forceUserLanguage;
+                $forceUserLanguage = TokenModule::getInstance()->forceUserLanguage;
                 if (!empty($forceUserLanguage)) {
                     $user->setting->set(User::USER_SETTING_UILANGUAGE, $forceUserLanguage);
                 }
