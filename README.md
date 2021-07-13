@@ -53,3 +53,7 @@ Run the import command afterwards:
 
 1. Create an App in the Admin UI. The App identifier is used for login.
 2. Use the APIs to make a Login Request for a given User (POST request to `/admin/api-usertoken-login` with fields `email`, `password` and `app`).
+
+## Caveats
+
+When a user is authenaticated and an access token is generated, all API requests with this token will be threated as this user. Also in terms of "language". You are not able to force a certain language with f.e. `_lang` since the user Admin UI Settings will be loaded. In order to change that behavior and force a certain fixed language see `Module::$forceUserLanguage` property.

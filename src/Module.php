@@ -12,6 +12,11 @@ use luya\admin\base\Module as BaseModule;
  */
 class Module extends BaseModule
 {
+    /**
+     * @var string If defined this user language will be set whenever the user login is authenticated.
+     * @since 1.2.0
+     */
+    public $forceUserLanguage;
 
     /**
      * @var integer The number of login attempts a user can do trough login api.
