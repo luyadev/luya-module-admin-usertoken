@@ -5,7 +5,7 @@ In order to read more about upgrading and BC breaks have a look at the [UPGRADE 
 
 ## 1.2.1 (27. July 2021)
 
-+ Inlcude version 4.0 of LUYA Admin module.
++ Include version 4.0 of LUYA Admin module.
 
 ## 1.2.0 (13. July 2021)
 
