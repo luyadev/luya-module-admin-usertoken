@@ -5,10 +5,10 @@
 	"keywords" : ["luya", "admin", "accesstoken", "tokens", "login", "api", "authentication"],
 	"license": "MIT",
 	"require": {
-		"luyadev/luya-module-admin" : "^3.3"
+		"luyadev/luya-module-admin" : "^3.0|^4.0"
 	},
 	"require-dev" : {
-	    "luyadev/luya-testsuite" : "^2.0"
+	    "luyadev/luya-testsuite" : "^3.0"
 	},
 	"autoload" : {
 		"psr-4" : {
