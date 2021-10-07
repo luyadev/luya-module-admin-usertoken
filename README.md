@@ -25,6 +25,7 @@ add to the config
 
 ```php
 'modules' => [
+    //...
     'usertoken' => [
       'class' => 'luya\admin\usertoken\Module',
     ]
