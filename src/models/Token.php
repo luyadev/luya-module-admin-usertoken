@@ -18,6 +18,8 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $login_count
  * @property integer $created_at
  * @property integer $updated_at
+ *
+ * @property-read integer $originalUserId
  * 
  * @since 1.0.0
  * @author Basil Suter <git@nadar.io>
@@ -104,7 +106,12 @@ class Token extends NgRestModel
             ['delete', false],
         ];
     }
-
+    
+    public function getOriginalUserId()
+    {
+        return $this->getOldAttribute('user_id');
+    }
+    
     /**
      * App Relation
      *
@@ -122,6 +129,6 @@ class Token extends NgRestModel
      */
     public function getUser()
     {
-        return $this->hasOne(User::class, ['id' => 'user_id']);
+        return $this->hasOne(User::class, ['id' => 'originalUserId']);
     }
 }
