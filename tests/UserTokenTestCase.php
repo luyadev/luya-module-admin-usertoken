@@ -9,7 +9,7 @@ use luya\testsuite\traits\AdminDatabaseTableTrait;
 class UserTokenTestCase extends WebApplicationTestCase
 {
     use AdminDatabaseTableTrait;
-    
+
     public function getConfigArray()
     {
         return [

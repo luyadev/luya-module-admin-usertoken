@@ -5,3 +5,5 @@
 /vendor/
 /luya
 composer.lock
+.php-cs-fixer.cache
+.tmp

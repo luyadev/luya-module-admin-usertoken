@@ -4,7 +4,7 @@ namespace luya\admin\usertoken\apis;
 
 /**
  * Token Controller.
- * 
+ *
  * @since 1.0.0
  * @author Basil Suter <git@nadar.io>
  */

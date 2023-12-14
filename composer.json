@@ -1,29 +1,49 @@
 {
-	"name" : "luyadev/luya-module-admin-usertoken",
-	"description" : "Extend the LUYA Admin by providing app's which then LUYA Admin users can authenticated through the API.",
-	"type" : "luya-extension",
-	"keywords" : ["luya", "admin", "accesstoken", "tokens", "login", "api", "authentication"],
+	"name": "luyadev/luya-module-admin-usertoken",
+	"description": "Extend the LUYA Admin by providing app's which then LUYA Admin users can authenticated through the API.",
+	"type": "luya-extension",
+	"keywords": [
+		"luya",
+		"admin",
+		"accesstoken",
+		"tokens",
+		"login",
+		"api",
+		"authentication"
+	],
 	"license": "MIT",
 	"require": {
-		"luyadev/luya-module-admin" : "^3.0|^4.0"
+		"luyadev/luya-module-admin": "^3.0|^4.0|^4.0"
 	},
-	"require-dev" : {
-	    "luyadev/luya-testsuite" : "^3.0"
+	"require-dev": {
+		"luyadev/luya-testsuite": "^3.0",
+		"friendsofphp/php-cs-fixer": "^3.2",
+        "phpstan/phpstan": "^1.7"
 	},
-	"autoload" : {
-		"psr-4" : {
-			"luya\\admin\\usertoken\\" : "src/"
+	"autoload": {
+		"psr-4": {
+			"luya\\admin\\usertoken\\": "src/"
 		}
 	},
-	"autoload-dev" : {
-       "psr-4" : {
-           "luya\\admin\\usertoken\\tests\\" : "tests/"
-       }
+	"autoload-dev": {
+		"psr-4": {
+			"luya\\admin\\usertoken\\tests\\": "tests/"
+		}
 	},
 	"repositories": [
 		{
 			"type": "composer",
 			"url": "https://asset-packagist.org"
 		}
-	]
+	],
+	"config": {
+		"allow-plugins": {
+			"luyadev/luya-composer": true,
+			"yiisoft/yii2-composer": true
+		}
+	},
+	"scripts": {
+		"phpstan": "vendor/bin/phpstan -v",
+        "phpcsfixer": "vendor/bin/php-cs-fixer fix"
+	}
 }

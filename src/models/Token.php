@@ -3,9 +3,9 @@
 namespace luya\admin\usertoken\models;
 
 use luya\admin\models\User;
-use Yii;
 use luya\admin\ngrest\base\NgRestModel;
 use luya\admin\ngrest\plugins\SelectRelationActiveQuery;
+use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -19,7 +19,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $created_at
  * @property integer $updated_at
  * @property-read integer $originalUserId
- * 
+ *
  * @since 1.0.0
  * @author Basil Suter <git@nadar.io>
  */
@@ -105,7 +105,7 @@ class Token extends NgRestModel
             ['delete', false],
         ];
     }
-    
+
     /**
      * @return string The user id before relation is populated
      * @since 1.3.0
@@ -114,7 +114,7 @@ class Token extends NgRestModel
     {
         return $this->getOldAttribute('user_id');
     }
-    
+
     /**
      * App Relation
      *

@@ -6,12 +6,12 @@ use luya\admin\events\UserAccessTokenLoginEvent;
 use luya\admin\models\User;
 use luya\admin\Module;
 use luya\admin\usertoken\models\Token;
+use luya\admin\usertoken\Module as TokenModule;
 use yii\base\BootstrapInterface;
-use \luya\admin\usertoken\Module as TokenModule;
 
 /**
  * Bootstrap login by token.
- * 
+ *
  * @author Basil Suter <git@nadar.io>
  * @since 1.0.0
  */

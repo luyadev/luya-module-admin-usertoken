@@ -12,7 +12,7 @@ use yii\base\InvalidArgumentException;
 
 /**
  * Login Controller
- * 
+ *
  * @since 1.0.0
  * @author Basil Suter <git@nadar.io>
  */
@@ -32,9 +32,9 @@ class LoginController extends RestController
 
     /**
      * User Login
-     * 
+     *
      * Login an user by email and password with a valid application token. The data must be submited by POST and requires `app`, `email` and `password` data.
-     * 
+     *
      * @return Token If successfull the token object is returned.
      * @uses string email
      * @uses string password
@@ -53,7 +53,7 @@ class LoginController extends RestController
         $form->allowedAttempts = $this->module->loginAttempts;
         $form->email = Yii::$app->request->getBodyParam('email');
         $form->password = Yii::$app->request->getBodyParam('password');
-        
+
         if ($form->validate()) {
 
             // Check for an existing token and udpate the token with a new value.

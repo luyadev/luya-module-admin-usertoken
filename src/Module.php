@@ -6,7 +6,7 @@ use luya\admin\base\Module as BaseModule;
 
 /**
  * User Token Module
- * 
+ *
  * @since 1.0.0
  * @author Basil Suter <git@nadar.io>
  */
@@ -28,7 +28,7 @@ class Module extends BaseModule
      * @var integer The number of seconds the user will be locked out after {{$loginAttemps}} has exceeded.
      * @since 1.1.0
      */
-    public $loginAttemptLockoutTime = 1800; 
+    public $loginAttemptLockoutTime = 1800;
 
     /**
      * {@inheritDoc}
@@ -50,7 +50,7 @@ class Module extends BaseModule
             ]
         ],
     ];
-    
+
     /**
      * {@inheritDoc}
      */

@@ -44,7 +44,7 @@ class LoginControllerTest extends UserTokenTestCase
         parent::afterSetup();
         $this->createAdminLangFixture();
         $this->createAdminNgRestLogFixture();
-        
+
         $this->appFixture = new NgRestModelFixture(['modelClass' => App::class]);
         $this->tokenFixture = new NgRestModelFixture(['modelClass' => Token::class]);
 
@@ -98,11 +98,11 @@ class LoginControllerTest extends UserTokenTestCase
         ]);
 
         // multi auth allowed generates new tokens
-        $r = $this->controller->actionIndex();   
+        $r = $this->controller->actionIndex();
         $this->assertSame(1, $r->login_count);
         $this->assertSame(1, $r->id);
 
-        $r = $this->controller->actionIndex();   
+        $r = $this->controller->actionIndex();
         $this->assertSame(1, $r->login_count);
         $this->assertSame(2, $r->id);
     }
@@ -119,11 +119,11 @@ class LoginControllerTest extends UserTokenTestCase
         ]);
 
         // multi auth allowed generates new tokens
-        $r = $this->controller->actionIndex();   
+        $r = $this->controller->actionIndex();
         $this->assertSame(1, $r->login_count);
         $this->assertSame(1, $r->id);
 
-        $r = $this->controller->actionIndex();   
+        $r = $this->controller->actionIndex();
         $this->assertSame(2, $r->login_count);
         $this->assertSame(1, $r->id);
     }
@@ -140,18 +140,18 @@ class LoginControllerTest extends UserTokenTestCase
         ]);
 
         // multi auth allowed generates new tokens
-        $r = $this->controller->actionIndex();   
+        $r = $this->controller->actionIndex();
         $this->assertSame(1, $r->login_count);
         $this->assertSame(1, $r->id);
 
-        $r = $this->controller->actionIndex();   
+        $r = $this->controller->actionIndex();
         $this->assertSame(1, $r->login_count);
         $this->assertSame(2, $r->id);
 
         $this->assertSame("2", Token::find()->count());
         sleep(3);
 
-        $r = $this->controller->actionIndex();   
+        $r = $this->controller->actionIndex();
         $this->assertSame(1, $r->login_count);
         $this->assertSame(3, $r->id);
 

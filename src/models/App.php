@@ -2,8 +2,8 @@
 
 namespace luya\admin\usertoken\models;
 
-use Yii;
 use luya\admin\ngrest\base\NgRestModel;
+use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -16,7 +16,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $expires_in
  * @property integer $created_at
  * @property integer $updated_at
- * 
+ *
  * @since 1.0.0
  * @author Basil Suter <git@nadar.io>
  */
@@ -49,7 +49,7 @@ class App extends NgRestModel
     {
         parent::init();
 
-        $this->on(self::EVENT_BEFORE_VALIDATE, function() {
+        $this->on(self::EVENT_BEFORE_VALIDATE, function () {
             if ($this->isNewRecord) {
                 $this->token = Yii::$app->security->generateRandomString(64);
             }
