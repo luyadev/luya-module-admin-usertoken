@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 In order to read more about upgrading and BC breaks have a look at the [UPGRADE Document](UPGRADE.md).
 
+## 1.3.1 (14. December 2023)
+
++ Include version 5.0 of LUYA Admin module.
+
 ## 1.3.0 (12. December 2021)
 
 + [#8](https://github.com/luyadev/luya-module-admin-usertoken/pull/8) Token: added getOriginalUserId() method, used in getUser() relation. Bootstrap: use originalUserId, instead of user_id.
